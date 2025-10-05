@@ -21,7 +21,7 @@ export default [
 				resolve({ preferBuiltins: true }),
 				commonjs(),
 				json(),
-				typescript({ tsconfig: 'tsconfig.server.json' }),
+				typescript({ tsconfig: 'tsconfig.server.rollup.json' }),
 				replace({
 					preventAssignment: true,
 					values: {
