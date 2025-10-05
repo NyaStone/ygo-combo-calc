@@ -1,0 +1,38 @@
+{
+  // TypeScript configuration for server-side (Express) code
+  "compilerOptions": {
+    // Store incremental build info for faster builds
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.server.tsbuildinfo",
+    // Target modern JavaScript for Node.js
+    "target": "ES2023",
+    "lib": ["ES2023"],
+    // Use CommonJS modules for Node.js compatibility
+    "module": "esnext",
+    // No global types by default
+    "types": [],
+    // Skip type checking of library files for faster builds
+    "skipLibCheck": true,
+    // Use Node.js module resolution
+    "moduleResolution": "node",
+    // Force module detection for all files
+    "moduleDetection": "force",
+    // Output compiled files to dist-server
+    "outDir": "dist-server",
+    // Server source code lives in server/
+    "rootDir": "server",
+    // Enable strict type checking
+    "strict": true,
+    // Linting options for cleaner code
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "erasableSyntaxOnly": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true,
+    // Allow default imports from CommonJS modules
+    "esModuleInterop": true
+  },
+  // Only include server source files
+  "include": ["server/**/*"],
+  // Exclude client, build, and node_modules directories
+  "exclude": ["src", "dist", "dist-server", "node_modules"]
+}
