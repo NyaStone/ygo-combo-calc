@@ -1,0 +1,22 @@
+services:
+  ygo-calc-server:
+    build:
+      context: .
+      dockerfile_inline: |
+        FROM node:22-alpine
+        RUN apk add --no-cache curl
+    image: ygo-calc-server:latest
+    working_dir: /app
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000" # Maps container port to host
+    environment:
+      - PORT=3000
+    command: node server.js
+    healthcheck:
+      test: ["CMD", "sh", "healthcheck.sh"]
+      interval: 1m30s
+      timeout: 10s
+      retries: 10
+      start_period: 10s

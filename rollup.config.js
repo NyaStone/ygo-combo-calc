@@ -11,7 +11,7 @@ export default [
 		output: {
 			file: 'release/server.js', // Output server bundle to release/
 			format: 'esm', // Use 'esm' for ES modules
-			sourcemap: true,
+			sourcemap: false,
 		},
 		external: [
 			// Node.js built-ins and dependencies you want to keep external
@@ -25,7 +25,6 @@ export default [
 				replace({
 					preventAssignment: true,
 					values: {
-						'process.env.PORT': JSON.stringify('443'),
 						'process.env.CLIENT_BUNDLE_PATH': JSON.stringify('client'),
 					},
 				}),
