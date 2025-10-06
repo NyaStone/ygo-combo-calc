@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "npm-run-all --parallel dev:client dev:server",
     "dev:client": "node --no-warnings ./node_modules/vite/bin/vite.js --clearScreen false",
-  "dev:server": "set TS_NODE_PROJECT=tsconfig.server.json&& nodemon --watch server --ext ts,js,json,cjs,mjs,env --exec \"node -r ts-node/register -r tsconfig-paths/register server/index.ts\" --no-clear",
+    "dev:server": "set TS_NODE_PROJECT=tsconfig.server.json&& nodemon --watch server --ext ts,js,json,cjs,mjs,env --exec \"node -r ts-node/register -r tsconfig-paths/register server/index.ts\" --no-clear",
     "build:client": "vite build",
     "build:server": "rollup -c --bundleConfigAsCjs",
     "build": "npm run build:client && npm run build:server && ncp docker-compose.release.yml release/docker-compose.yml && ncp docker.healthcheck.sh release/healthcheck.sh",
@@ -18,7 +18,8 @@
     "@tanstack/react-query": "^5.90.2",
     "express": "^5.1.0",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "ygoapi": "^1.2.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",
